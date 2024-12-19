@@ -1,13 +1,14 @@
 //IMPORTAR ESCENAS
-import Intro from "./scenes/Intro.js?v=4.10";
+import Intro from "./scenes/Intro.js?v=1.0";
 import Loading from "./scenes/Loading.js?v=1.0";
+import ScenePpal from "./scenes/ScenePpal.js?v=1.0";
 import GameOver from "./scenes/GameOver.js?v=4.10";
 import Winner from "./scenes/Winner.js?v=4.10";
 
 const config = {
 
     //opcionales
-    title: 'plantilla', // Nombre juego
+    title: 'Number_Party', // Nombre juego
     url: '',
     version: '0.0.1',
     pixelArt: false, //MARCAR LOS PIXELES DE LAS IMAGENES
@@ -23,7 +24,7 @@ const config = {
         default: 'arcade',
         arcade: {
             //gravity: { y: 300 },
-            debug: true
+            debug: false
         } 
     },
 
@@ -41,7 +42,7 @@ const config = {
     },
 
     //escenas del juego
-    scene: [Loading,Intro,Winner,GameOver]
+    scene: [Loading,Intro,ScenePpal,Winner,GameOver]
 }
 
 // CREAR LA INSTANCIA DEL JUEGO

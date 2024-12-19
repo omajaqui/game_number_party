@@ -79,49 +79,27 @@ class Loading extends Phaser.Scene {
     //Recursos para todas las scenas
     this.load
       .image('btn_listen',`img/icons/listen.png?${_autoVersionPhaser}`)
-      .image('btn_todobien', `img/icons/todoBien.png?${_autoVersionPhaser}`)            
+      .image('btn_todobien', `img/icons/todoBien.png?${_autoVersionPhaser}`)
+      .image('btn_home', `img/icons/home.png?${_autoVersionPhaser}`)        
 
       .audio('winner', 'sonidos/winner.mp3')
     ;
 
     switch (this.targetScene ) {
       case 'Intro':
-        //this.niveles.preload();
         
         //recursos del componente niveles
         this.load
           .image('bgLevels', `img/backgrounds/bg_levels.png?${_autoVersionPhaser}`)
-          //Buttons
-          .image('btn_home', `img/icons/home.png?${_autoVersionPhaser}`)
-          .image('btn_speak_en', `img/icons/speak_english.png?${_autoVersionPhaser}`)
-          .image('btn_speak_es', `img/icons/speak_spanish.png?${_autoVersionPhaser}`)
-
-          // starts
-          .image('0_stars', `img/niveles/0_stars.png?${_autoVersionPhaser}`)
-          .image('1_stars', `img/niveles/1_stars.png?${_autoVersionPhaser}`)
-          .image('2_stars', `img/niveles/2_stars.png?${_autoVersionPhaser}`)
-          .image('3_stars', `img/niveles/3_stars.png?${_autoVersionPhaser}`)
 
           //Niveles
-          .image('A', `img/niveles/A.png?${_autoVersionPhaser}`)
-          .image('E', `img/niveles/E.png?${_autoVersionPhaser}`)
-          .image('I', `img/niveles/I.png?${_autoVersionPhaser}`)
-          .image('O', `img/niveles/O.png?${_autoVersionPhaser}`)
-          .image('U', `img/niveles/U.png?${_autoVersionPhaser}`)
-
-          //audios
-          .audio('letraA', 'sonidos/scenaA/LetraA.mp3')
-          .audio('letraE', 'sonidos/scenaA/LetraE.mp3')
-          .audio('letraI', 'sonidos/scenaA/LetraI.mp3')
-          .audio('letraO', 'sonidos/scenaA/LetraO.mp3')
-          .audio('letraU', 'sonidos/scenaA/LetraU.mp3')
+          .image('easy', `img/niveles/easy.png?${_autoVersionPhaser}`)
+          .image('normal', `img/niveles/normal.png?${_autoVersionPhaser}`)
+          .image('hard', `img/niveles/hard.png?${_autoVersionPhaser}`)
 
           //bg par alas indicaciones de cada nivel
-          .image('bg_SceneA_indications', `img/backgrounds/bg_SceneA_indications.png?${_autoVersionPhaser}`)
-          .image('bg_SceneE_indications', `img/backgrounds/bg_SceneE_indications.png?${_autoVersionPhaser}`)
-          .image('bg_SceneI_indications', `img/backgrounds/bg_SceneI_indications.png?${_autoVersionPhaser}`)
-          .image('bg_SceneO_indications', `img/backgrounds/bg_SceneO_indications.png?${_autoVersionPhaser}`)
-          .image('bg_SceneU_indications', `img/backgrounds/bg_SceneU_indications.png?${_autoVersionPhaser}`)
+          .image('bg_ScenePpal_indications', `img/backgrounds/bg_ScenePpal_indications.png?${_autoVersionPhaser}`)
+          .audio('indications', 'sonidos/indicaciones.mp3')      
         ;
 
         this.load
@@ -133,307 +111,63 @@ class Loading extends Phaser.Scene {
         this.load.audio('backgroundMusic', 'sonidos/bg_Intro.mp3');
       break;
 
-      case 'SceneA':
-        // parallax y player
-        this.load.image('backgroundSky', 'img/backgrounds/bg_parallax_sky.png');
-        this.load.image('backgroundMountains', 'img/backgrounds/bg_parallax_mountain.png');
-        this.load.image('backgroundTrees', 'img/backgrounds/bg_parallax_trees.png');
-        this.load.spritesheet('beeSprite', 'img/players/abeja/SPRITESHEET.png', { frameWidth: 510, frameHeight: 510 });        
-
-        // Animales y objetos
+      case 'ScenePpal':
+        this.load.image('bgScenePpal',`img/backgrounds/bgScenePpal.png?${_autoVersionPhaser}`)
+        // Números
         this.load
-          .image('recurso_agua', 'img/niveles/A/agua.png')
-          .image('recurso_aguacate', 'img/niveles/A/aguacate.png')
-          .image('recurso_aguila', 'img/niveles/A/aguila.png')
-          .image('recurso_alce', 'img/niveles/A/alce.png')
-          .image('recurso_anillo', 'img/niveles/A/anillo.png')
-          .image('recurso_araña', 'img/niveles/A/araña.png')
-          .image('recurso_arbol', 'img/niveles/A/arbol.png')
-          .image('recurso_ardilla', 'img/niveles/A/ardilla.png')
-          .image('recurso_armadillo', 'img/niveles/A/armadillo.png')
-          .image('recurso_asno', 'img/niveles/A/asno.png')
-          .image('recurso_avestruz', 'img/niveles/A/avestruz.png')
-          .image('recurso_avion', 'img/niveles/A/avion.png')
-          .image('recurso_axolote', 'img/niveles/A/axolote.png')          
-        ;
+          .image('number_1', 'img/niveles/1.png')
+          .image('number_2', 'img/niveles/2.png')
+          .image('number_3', 'img/niveles/3.png')
+          .image('number_4', 'img/niveles/4.png')
+          .image('number_5', 'img/niveles/5.png')
+          .image('number_6', 'img/niveles/6.png')
+          .image('number_7', 'img/niveles/7.png')
+          .image('number_8', 'img/niveles/8.png')
+          .image('number_9', 'img/niveles/9.png')
+          .image('number_10', 'img/niveles/10.png')        
 
-        // Stikers
-        this.load
-          .image('stiker_agua', 'img/niveles/A/stiker_agua.png')
-          .image('stiker_aguacate', 'img/niveles/A/stiker_aguacate.png')
-          .image('stiker_aguila', 'img/niveles/A/stiker_aguila.png')
-          .image('stiker_alce', 'img/niveles/A/stiker_alce.png')
-          .image('stiker_anillo', 'img/niveles/A/stiker_anillo.png')
-          .image('stiker_araña', 'img/niveles/A/stiker_araña.png')
-          .image('stiker_arbol', 'img/niveles/A/stiker_arbol.png')
-          .image('stiker_ardilla', 'img/niveles/A/stiker_ardilla.png')
-          .image('stiker_armadillo', 'img/niveles/A/stiker_armadillo.png')
-          .image('stiker_asno', 'img/niveles/A/stiker_asno.png')
-          .image('stiker_avestruz', 'img/niveles/A/stiker_avestruz.png')
-          .image('stiker_avion', 'img/niveles/A/stiker_avion.png')
-          .image('stiker_axolote', 'img/niveles/A/stiker_axolote.png')
-          .image('stikerA', `img/niveles/stikerA.png`)
+          //Imagenes de numeros
+          .image('recurso_1', 'img/niveles/uno.png')
+          .image('recurso_2', 'img/niveles/dos.png')
+          .image('recurso_3', 'img/niveles/tres.png')
+          .image('recurso_4', 'img/niveles/cuatro.png')
+          .image('recurso_5', 'img/niveles/cinco.png')
+          .image('recurso_6', 'img/niveles/seis.png')
+          .image('recurso_7', 'img/niveles/siete.png')
+          .image('recurso_8', 'img/niveles/ocho.png')
+          .image('recurso_9', 'img/niveles/nueve.png')
+          .image('recurso_10', 'img/niveles/diez.png')
+
+          //sonidos translates
+          .audio('translate_number_1', 'sonidos/translate_number_1.mp3')
+          .audio('translate_number_2', 'sonidos/translate_number_2.mp3')
+          .audio('translate_number_3', 'sonidos/translate_number_3.mp3')
+          .audio('translate_number_4', 'sonidos/translate_number_4.mp3')
+          .audio('translate_number_5', 'sonidos/translate_number_5.mp3')
+          .audio('translate_number_6', 'sonidos/translate_number_6.mp3')
+          .audio('translate_number_7', 'sonidos/translate_number_7.mp3')
+          .audio('translate_number_8', 'sonidos/translate_number_8.mp3')
+          .audio('translate_number_9', 'sonidos/translate_number_9.mp3')
+          .audio('translate_number_10', 'sonidos/translate_number_10.mp3')
+
+          //Sonidos de motivacion
+          .audio('motivation_1', 'sonidos/motivacion1.mp3')
+          .audio('motivation_2', 'sonidos/motivacion2.mp3')
+          .audio('motivation_3', 'sonidos/motivacion3.mp3')
+          .audio('motivation_4', 'sonidos/motivacion4.mp3')
+          .audio('motivation_5', 'sonidos/motivacion5.mp3')
+          .audio('motivation_6', 'sonidos/motivacion6.mp3')
+          .audio('motivation_7', 'sonidos/motivacion7.mp3')
+          .audio('motivation_8', 'sonidos/motivacion8.mp3')
+          .audio('motivation_9', 'sonidos/motivacion9.mp3')
+          .audio('motivation_10', 'sonidos/motivacion10.mp3')
         ;
         
         // Sonidos
         this.load
-          .audio('beeBuzzing', 'sonidos/scenaA/bees_buzzing.mp3')
-          .audio('soundTheme_A', 'sonidos/scenaA/SoundTheme_A.mp3')
-          .audio('translate_agua', 'sonidos/scenaA/translate_agua.mp3')
-          .audio('translate_aguacate', 'sonidos/scenaA/translate_aguacate.mp3')
-          .audio('translate_aguila', 'sonidos/scenaA/translate_aguila.mp3')
-          .audio('translate_alce', 'sonidos/scenaA/translate_alce.mp3')
-          .audio('translate_anillo', 'sonidos/scenaA/translate_anillo.mp3')
-          .audio('translate_araña', 'sonidos/scenaA/translate_araña.mp3')
-          .audio('translate_arbol', 'sonidos/scenaA/translate_arbol.mp3')
-          .audio('translate_ardilla', 'sonidos/scenaA/translate_ardilla.mp3')
-          .audio('translate_armadillo', 'sonidos/scenaA/translate_armadillo.mp3')
-          .audio('translate_asno', 'sonidos/scenaA/translate_asno.mp3')
-          .audio('translate_avestruz', 'sonidos/scenaA/translate_avestruz.mp3')
-          .audio('translate_avion', 'sonidos/scenaA/translate_avion.mp3')
-          .audio('translate_axolote', 'sonidos/scenaA/translate_axolote.mp3')
+          .audio('soundTheme', 'sonidos/SoundTheme.mp3')
         ;
-      break;
-      
-      case 'SceneE':
-          this.load.image('bg_sceneE', 'img/backgrounds/bg_sceneE.png');
-          this.load.spritesheet('elephantSprite', 'img/players/elefante/elefante_sprites.png', { frameWidth: 512, frameHeight: 512 });
-
-          // Animales y objetos
-          this.load
-            .image('recurso_elefante', 'img/niveles/E/elefante.png')
-            .image('recurso_enano', 'img/niveles/E/enano.png')
-            .image('recurso_erizo', 'img/niveles/E/erizo.png')
-            .image('recurso_escalera', 'img/niveles/E/escalera.png')
-            .image('recurso_escarabajo', 'img/niveles/E/escarabajo.png')
-            .image('recurso_escorpion', 'img/niveles/E/escorpion.png')
-            .image('recurso_escudo', 'img/niveles/E/escudo.png')
-            .image('recurso_escuela', 'img/niveles/E/escuela.png')
-            .image('recurso_espada', 'img/niveles/E/espada.png')
-            .image('recurso_espejo', 'img/niveles/E/espejo.png')
-            .image('recurso_estrella', 'img/niveles/E/estrella.png')
-            .image('recurso_estrellademar', 'img/niveles/E/estrellademar.png')
-            .image('recurso_extintor', 'img/niveles/E/extintor.png')
-          ;
-
-          //Stikers
-          this.load
-            .image('stiker_elefante', 'img/niveles/E/stiker_elefante.png')
-            .image('stiker_enano', 'img/niveles/E/stiker_enano.png')
-            .image('stiker_erizo', 'img/niveles/E/stiker_erizo.png')
-            .image('stiker_escalera', 'img/niveles/E/stiker_escalera.png')
-            .image('stiker_escarabajo', 'img/niveles/E/stiker_escarabajo.png')
-            .image('stiker_escorpion', 'img/niveles/E/stiker_escorpion.png')
-            .image('stiker_escudo', 'img/niveles/E/stiker_escudo.png')
-            .image('stiker_escuela', 'img/niveles/E/stiker_escuela.png')
-            .image('stiker_espada', 'img/niveles/E/stiker_espada.png')
-            .image('stiker_espejo', 'img/niveles/E/stiker_espejo.png')
-            .image('stiker_estrella', 'img/niveles/E/stiker_estrella.png')
-            .image('stiker_estrellademar', 'img/niveles/E/stiker_estrellademar.png')
-            .image('stiker_extintor', 'img/niveles/E/stiker_extintor.png')
-            .image('stikerE', `img/niveles/stikerE.png`)
-          ;
-
-          //Sonidos
-          this.load
-            .audio('elephantRetumb', 'sonidos/scenaE/elephant_retumb.mp3')
-            .audio('soundTheme_E', 'sonidos/scenaE/SoundTheme_E.mp3')
-            .audio('translate_elefante', 'sonidos/scenaE/translate_elefante.mp3')
-            .audio('translate_enano', 'sonidos/scenaE/translate_enano.mp3')
-            .audio('translate_erizo', 'sonidos/scenaE/translate_erizo.mp3')
-            .audio('translate_escalera', 'sonidos/scenaE/translate_escalera.mp3')
-            .audio('translate_escarabajo', 'sonidos/scenaE/translate_escarabajo.mp3')
-            .audio('translate_escorpion', 'sonidos/scenaE/translate_escorpion.mp3')
-            .audio('translate_escudo', 'sonidos/scenaE/translate_escudo.mp3')
-            .audio('translate_escuela', 'sonidos/scenaE/translate_escuela.mp3')
-            .audio('translate_espada', 'sonidos/scenaE/translate_espada.mp3')
-            .audio('translate_espejo', 'sonidos/scenaE/translate_espejo.mp3')
-            .audio('translate_estrella', 'sonidos/scenaE/translate_estrella.mp3')
-            .audio('translate_estrellademar', 'sonidos/scenaE/translate_estrellademar.mp3')
-            .audio('translate_extintor', 'sonidos/scenaE/translate_extintor.mp3')
-          ;
-      break;
-
-      case 'SceneI':
-        this.load.image('bg_sceneI', 'img/backgrounds/bg_sceneI.png');
-        this.load.image('iguana_tronco', 'img/niveles/I/tronco.png');
-        this.load.spritesheet('iguanaSprite', 'img/players/iguana/iguana_spritesheet.png', { frameWidth: 512, frameHeight: 512 });
-
-        // Animales y objetos
-        this.load
-          .image('recurso_iglesia', 'img/niveles/I/iglesia.png')
-          .image('recurso_iglu', 'img/niveles/I/iglu.png')
-          .image('recurso_iguana', 'img/niveles/I/iguana.png')
-          .image('recurso_iman', 'img/niveles/I/iman.png')
-          .image('recurso_impala', 'img/niveles/I/impala.png')
-          .image('recurso_impresora', 'img/niveles/I/impresora.png')
-          .image('recurso_indio', 'img/niveles/I/indio.png')
-          .image('recurso_insectos', 'img/niveles/I/insectos.png')
-          .image('recurso_invierno', 'img/niveles/I/invierno.png')
-          .image('recurso_inyeccion', 'img/niveles/I/inyeccion.png')
-          .image('recurso_isla', 'img/niveles/I/isla.png')    
-        ;
-
-        // Stikers
-        this.load
-          .image('stikerI', `img/niveles/stikerI.png`)
-          .image('stiker_iglesia', 'img/niveles/I/stiker_iglesia.png')
-          .image('stiker_iglu', 'img/niveles/I/stiker_iglu.png')
-          .image('stiker_iguana', 'img/niveles/I/stiker_iguana.png')
-          .image('stiker_iman', 'img/niveles/I/stiker_iman.png')
-          .image('stiker_impala', 'img/niveles/I/stiker_impala.png')
-          .image('stiker_impresora', 'img/niveles/I/stiker_impresora.png')
-          .image('stiker_indio', 'img/niveles/I/stiker_indio.png')
-          .image('stiker_insectos', 'img/niveles/I/stiker_insectos.png')
-          .image('stiker_invierno', 'img/niveles/I/stiker_invierno.png')
-          .image('stiker_inyeccion', 'img/niveles/I/stiker_inyeccion.png')
-          .image('stiker_isla', 'img/niveles/I/stiker_isla.png')
-        ;
-
-        // Sonidos
-        this.load
-          .audio('soundTheme_I', 'sonidos/scenaI/SoundTheme_I.mp3')
-          .audio('translate_iglesia', 'sonidos/scenaI/translate_iglesia.mp3')
-          .audio('translate_iglu', 'sonidos/scenaI/translate_iglu.mp3')
-          .audio('translate_iguana', 'sonidos/scenaI/translate_iguana.mp3')
-          .audio('translate_iman', 'sonidos/scenaI/translate_iman.mp3')
-          .audio('translate_impala', 'sonidos/scenaI/translate_impala.mp3')
-          .audio('translate_impresora', 'sonidos/scenaI/translate_impresora.mp3')
-          .audio('translate_indio', 'sonidos/scenaI/translate_indio.mp3')
-          .audio('translate_insectos', 'sonidos/scenaI/translate_insectos.mp3')
-          .audio('translate_invierno', 'sonidos/scenaI/translate_invierno.mp3')
-          .audio('translate_inyeccion', 'sonidos/scenaI/translate_inyeccion.mp3')
-          .audio('translate_isla', 'sonidos/scenaI/translate_isla.mp3')
-        ;
-        break;
-
-      case 'SceneO':
-        // parallax y player
-        this.load.image('backgroundMarinoL3', 'img/backgrounds/parallax_marino_L3.png');
-        this.load.image('backgroundMarinoL2', 'img/backgrounds/parallax_marino_L2.png');
-        this.load.image('backgroundMarinoL1', 'img/backgrounds/parallax_marino_L1.png');
-        this.load.spritesheet('fishSprite', 'img/players/pez/pez_spritesheet.png', { frameWidth: 256, frameHeight: 256 });
-
-        // Animales y objetos
-        this.load
-          .image('recurso_ocho', 'img/niveles/O/ocho.png')
-          .image('recurso_ojo', 'img/niveles/O/ojo.png')
-          .image('recurso_ola', 'img/niveles/O/ola.png')
-          .image('recurso_olla', 'img/niveles/O/olla.png')
-          .image('recurso_orangutan', 'img/niveles/O/orangutan.png')
-          .image('recurso_orca', 'img/niveles/O/orca.png')
-          .image('recurso_oreja', 'img/niveles/O/oreja.png')
-          .image('recurso_oro', 'img/niveles/O/oro.png')
-          .image('recurso_orquidea', 'img/niveles/O/orquidea.png')
-          .image('recurso_oruga', 'img/niveles/O/oruga.png')
-          .image('recurso_osopanda', 'img/niveles/O/osopanda.png')  
-          .image('recurso_osopardo', 'img/niveles/O/osopardo.png')  
-          .image('recurso_ostra', 'img/niveles/O/ostra.png')
-        ; 
-
-        // Stikers
-        this.load
-          .image('stikerO', `img/niveles/stikerO.png`)
-          .image('stiker_ocho', 'img/niveles/O/stiker_ocho.png')
-          .image('stiker_ojo', 'img/niveles/O/stiker_ojo.png')
-          .image('stiker_ola', 'img/niveles/O/stiker_ola.png')
-          .image('stiker_olla', 'img/niveles/O/stiker_olla.png')
-          .image('stiker_orangutan', 'img/niveles/O/stiker_orangutan.png')
-          .image('stiker_orca', 'img/niveles/O/stiker_orca.png')
-          .image('stiker_oreja', 'img/niveles/O/stiker_oreja.png')
-          .image('stiker_oro', 'img/niveles/O/stiker_oro.png')
-          .image('stiker_orquidea', 'img/niveles/O/stiker_orquidea.png')
-          .image('stiker_oruga', 'img/niveles/O/stiker_oruga.png')
-          .image('stiker_osopanda', 'img/niveles/O/stiker_osopanda.png')  
-          .image('stiker_osopardo', 'img/niveles/O/stiker_osopardo.png')  
-          .image('stiker_ostra', 'img/niveles/O/stiker_ostra.png')
-        ;
-
-        // Sonidos
-        this.load
-          .audio('soundTheme_O', 'sonidos/scenaO/SoundTheme_O.mp3')
-          .audio('translate_ocho', 'sonidos/scenaO/translate_ocho.mp3')
-          .audio('translate_ojo', 'sonidos/scenaO/translate_ojo.mp3')
-          .audio('translate_ola', 'sonidos/scenaO/translate_ola.mp3')
-          .audio('translate_olla', 'sonidos/scenaO/translate_olla.mp3')
-          .audio('translate_orangutan', 'sonidos/scenaO/translate_orangutan.mp3')
-          .audio('translate_orca', 'sonidos/scenaO/translate_orca.mp3')
-          .audio('translate_oreja', 'sonidos/scenaO/translate_oreja.mp3')
-          .audio('translate_oro', 'sonidos/scenaO/translate_oro.mp3')
-          .audio('translate_orquidea', 'sonidos/scenaO/translate_orquidea.mp3')
-          .audio('translate_oruga', 'sonidos/scenaO/translate_oruga.mp3')
-          .audio('translate_osopanda', 'sonidos/scenaO/translate_osopanda.mp3')  
-          .audio('translate_osopardo', 'sonidos/scenaO/translate_osopardo.mp3')  
-          .audio('translate_ostra', 'sonidos/scenaO/translate_ostra.mp3')
-        ;
-        break;
-
-      case 'SceneU':
-        // parallax y player
-        this.load.image('backgroundSpaceL3', `img/backgrounds/parallax_universe_L3.png?${_autoVersionPhaser}`);
-        this.load.image('backgroundSpaceL2', `img/backgrounds/parallax_universe_L2.png?${_autoVersionPhaser}`);
-        this.load.image('backgroundSpaceL1', `img/backgrounds/parallax_universe_L1.png?${_autoVersionPhaser}`);
-        this.load.spritesheet('naveSprite', 'img/players/navespacial/nave_spritesheet.png', { frameWidth: 256, frameHeight: 256 });
-        
-        //Animales y objetos
-        this.load
-          .image('stikerU', `img/niveles/stikerU.png`)
-          .image('recurso_uchuva', 'img/niveles/U/uchuva.png')
-          .image('recurso_ukulele', 'img/niveles/U/ukulele.png')
-          .image('recurso_unas', 'img/niveles/U/unas.png')
-          .image('recurso_unicornio', 'img/niveles/U/unicornio.png')
-          .image('recurso_uniforme', 'img/niveles/U/uniforme.png')
-          .image('recurso_unir', 'img/niveles/U/unir.png')
-          .image('recurso_universidad', 'img/niveles/U/universidad.png')
-          .image('recurso_universo', 'img/niveles/U/universo.png')
-          .image('recurso_uno', 'img/niveles/U/uno.png')
-          .image('recurso_urgencias', 'img/niveles/U/urgencias.png')
-          .image('recurso_urna', 'img/niveles/U/urna.png')
-          .image('recurso_urraca', 'img/niveles/U/urraca.png')
-          .image('recurso_utiles', 'img/niveles/U/utiles.png')
-          .image('recurso_uvas', 'img/niveles/U/uvas.png')
-        ;
-
-        // Stikers
-        this.load
-          .image('stikerU', `img/niveles/stikerU.png`)
-          .image('stiker_uchuva', 'img/niveles/U/stiker_uchuva.png')
-          .image('stiker_ukulele', 'img/niveles/U/stiker_ukulele.png')
-          .image('stiker_unas', 'img/niveles/U/stiker_unas.png')
-          .image('stiker_unicornio', 'img/niveles/U/stiker_unicornio.png')
-          .image('stiker_uniforme', 'img/niveles/U/stiker_uniforme.png')
-          .image('stiker_unir', 'img/niveles/U/stiker_unir.png')
-          .image('stiker_universidad', 'img/niveles/U/stiker_universidad.png')
-          .image('stiker_universo', 'img/niveles/U/stiker_universo.png')
-          .image('stiker_uno', 'img/niveles/U/stiker_uno.png')
-          .image('stiker_urgencias', 'img/niveles/U/stiker_urgencias.png')
-          .image('stiker_urna', 'img/niveles/U/stiker_urna.png')
-          .image('stiker_urraca', 'img/niveles/U/stiker_urraca.png')
-          .image('stiker_utiles', 'img/niveles/U/stiker_utiles.png')
-          .image('stiker_uvas', 'img/niveles/U/stiker_uvas.png')
-        ;
-
-
-        // Sonidos
-        this.load
-          .audio('soundTheme_U', 'sonidos/scenaU/SoundTheme_U.mp3')          
-          .audio('translate_uchuva', 'sonidos/scenaU/translate_uchuva.mp3')
-          .audio('translate_ukulele', 'sonidos/scenaU/translate_ukulele.mp3')
-          .audio('translate_unas', 'sonidos/scenaU/translate_unas.mp3')
-          .audio('translate_unicornio', 'sonidos/scenaU/translate_unicornio.mp3')
-          .audio('translate_uniforme', 'sonidos/scenaU/translate_uniforme.mp3')
-          .audio('translate_unir', 'sonidos/scenaU/translate_unir.mp3')
-          .audio('translate_universidad', 'sonidos/scenaU/translate_universidad.mp3')
-          .audio('translate_universo', 'sonidos/scenaU/translate_universo.mp3')
-          .audio('translate_uno', 'sonidos/scenaU/translate_uno.mp3')
-          .audio('translate_urgencias', 'sonidos/scenaU/translate_urgencias.mp3')
-          .audio('translate_urna', 'sonidos/scenaU/translate_urna.mp3')
-          .audio('translate_urraca', 'sonidos/scenaU/translate_urraca.mp3')
-          .audio('translate_utiles', 'sonidos/scenaU/translate_utiles.mp3')
-          .audio('translate_uvas', 'sonidos/scenaU/translate_uvas.mp3')
-        ;
-
-        break;
+      break;      
       
       default:
           break;
