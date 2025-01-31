@@ -91,15 +91,19 @@ class Loading extends Phaser.Scene {
         //recursos del componente niveles
         this.load
           .image('bgLevels', `img/backgrounds/bg_levels.png?${_autoVersionPhaser}`)
+          .audio('welcome_audio', 'sonidos/welcomeFiesta.mp3')
 
           //Niveles
           .image('easy', `img/niveles/easy.png?${_autoVersionPhaser}`)
           .image('normal', `img/niveles/normal.png?${_autoVersionPhaser}`)
           .image('hard', `img/niveles/hard.png?${_autoVersionPhaser}`)
+          .audio('level_easy', 'sonidos/nivelFacil.mp3')
+          .audio('level_normal', 'sonidos/nivelNormal.mp3')
+          .audio('level_hard', 'sonidos/nivelDificil.mp3')
 
           //bg par alas indicaciones de cada nivel
           .image('bg_ScenePpal_indications', `img/backgrounds/bg_ScenePpal_indications.png?${_autoVersionPhaser}`)
-          .audio('indications', 'sonidos/indicaciones.mp3')      
+          .audio('indications', 'sonidos/indicaciones.mp3')
         ;
 
         this.load

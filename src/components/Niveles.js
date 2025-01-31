@@ -26,6 +26,10 @@ export default class Niveles {
       
       //Definicion de botones
       this.btnHome = this.relatedScene.add.sprite(40, 40, 'btn_home').setAlpha(0).setVisible(false);
+
+      this.soundLevelEasy = this.relatedScene.sound.add('level_easy', { volume: 0.7, loop: false });
+      this.soundLevelNormal = this.relatedScene.sound.add('level_normal', { volume: 0.7, loop: false });
+      this.soundLevelHard = this.relatedScene.sound.add('level_hard', { volume: 0.7, loop: false });
       
 
       this.nivel_Easy = this.relatedScene.add.sprite(200, 250, 'easy').setScale(0.8).setDepth(10).setInteractive({cursor:'pointer'});         
@@ -208,7 +212,7 @@ export default class Niveles {
 
     // Dejar visible solo el nivel seleccionado
     switch (currentLevel) {
-      case 'easy':
+      case 'easy':        
         this.nivel_Easy.setAlpha(1);
         // Configuración para el nivel fácil
         config = {
@@ -231,7 +235,7 @@ export default class Niveles {
         });
         break; 
 
-      case 'normal': 
+      case 'normal':        
         this.nivel_Normal.setAlpha(1);
 
         // Configuración para el nivel normal
@@ -255,7 +259,7 @@ export default class Niveles {
         });
         break; 
 
-      case 'hard':
+      case 'hard':        
         this.nivel_Hard.setAlpha(1);
 
         // Configuración para el nivel difícil
@@ -292,6 +296,12 @@ export default class Niveles {
     }
     await this.comun.delay(1000);
 
+    switch (config.difficulty) {
+      case 'easy':    this.soundLevelEasy.play(); break;
+      case 'normal':  this.soundLevelNormal.play();  break;
+      case 'hard':    this.soundLevelHard.play(); break;
+        break;
+    }
 
     await this.comun.delay(3000);
     this.showIndications();

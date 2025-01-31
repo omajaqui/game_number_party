@@ -15,12 +15,15 @@ class Intro extends Phaser.Scene {
       this.btnMusicOn = this.add.sprite(40, 40, 'btn_music').setScale(0.25).setDepth(5).setInteractive({cursor:'pointer'}).setVisible(true);      
       this.background = this.add.image(this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, 'backgroundIntro')
           .setVisible(true).setDepth(1) ;
-      ;      
+      ;
+
+      this.wekcomeAudio = this.sound.add('welcome_audio', { volume: 0.7, loop: false });
+      this.wekcomeAudio.play();
 
       this.introText = this.add.text(this.sys.game.canvas.width/2-100,320,"",{ fontStyle: 'strong', align: 'lef', font: '24px Arial', fill: 'yellow' });  
       
       // Texto "Press Enter to continue" mejorado
-      this.continueText = this.add.text(this.sys.game.canvas.width / 2, this.sys.game.canvas.height - 50, "Press Enter to continue", {
+      this.continueText = this.add.text(this.sys.game.canvas.width / 2, this.sys.game.canvas.height - 50, "Presiona Enter para empezar", {
           font: '32px Arial',       // Tamaño de fuente más grande
           fill: '#FFFFFF',           // Color de texto blanco
           stroke: '#000000',         // Contorno negro
