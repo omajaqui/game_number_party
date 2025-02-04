@@ -111,6 +111,8 @@ class Loading extends Phaser.Scene {
           .image('bgOverlay',`img/backgrounds/overlay_black.png?${_autoVersionPhaser}`)
           .image('btn_music',`img/icons/music_on.png?${_autoVersionPhaser}`)
           .image('recurso_star', `img/niveles/star.png?${_autoVersionPhaser}`)
+          .image('recurso_play_off', `img/icons/play_off.png?${_autoVersionPhaser}`)
+          .image('recurso_play_on', `img/icons/play_on.png?${_autoVersionPhaser}`)
         ;                
         this.load.audio('backgroundMusic', 'sonidos/bg_Intro.mp3');
       break;
